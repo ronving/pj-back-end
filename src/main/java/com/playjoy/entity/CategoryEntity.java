@@ -1,6 +1,6 @@
-package com.playjoy.domain;
+package com.playjoy.entity;
 
-import com.playjoy.enums.OrderStatus;
+import com.playjoy.enums.Category;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -12,28 +12,22 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import java.util.List;
+import javax.persistence.Table;
 
 @Entity
 @Getter
 @Setter
 @Accessors(chain = true)
-public class OrderEntity {
+@Table(name = "category")
+public class CategoryEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqOrder")
-    @SequenceGenerator(name = "seqOrder")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCategory")
+    @SequenceGenerator(name = "seqCategory")
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private String orderCode;
-
     @Column
-    @OneToMany
-    private List<ProductEntity> products;
-
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    private Category category;
 }

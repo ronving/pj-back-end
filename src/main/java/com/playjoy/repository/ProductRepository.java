@@ -1,6 +1,6 @@
 package com.playjoy.repository;
 
-import com.playjoy.domain.ProductEntity;
+import com.playjoy.entity.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

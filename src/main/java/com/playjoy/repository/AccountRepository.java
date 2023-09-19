@@ -1,6 +1,6 @@
 package com.playjoy.repository;
 
-import com.playjoy.domain.AccountEntity;
+import com.playjoy.entity.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

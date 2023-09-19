@@ -1,0 +1,42 @@
+scalar BigDecimal
+scalar DateTime
+scalar Long
+scalar Tag
+scalar Category
+
+type Query {
+    findProduct: Product!
+    findAllProducts: [Product!]!
+    findProductsByCategory(category: Category!, page: Int!, size: Int!): [Product!]!
+}
+
+type Mutation {
+    addProduct(product: ProductInput!): Product!
+    updateProduct(product: ProductInput!): Product!
+    deleteProduct(id: Long!): Void!
+}
+
+input ProductInput {
+    productName: String!
+    description: String!
+    iconUrl: String!
+    previewUrl: String!
+    imagesUrl: [String!]!
+    price: BigDecimal!
+    tags: [Tag!]!
+    categories: [Category!]!
+}
+
+type Product {
+    id: Long!
+    productName: String!
+    description: String!
+    iconUrl: String!
+    previewUrl: String!
+    imagesUrl: [String!]!
+    price: BigDecimal!
+    tags: [Tag!]!
+    categories: [Category!]!
+    createdDate: DateTime!
+    lastModifiedDate: DateTime!
+}

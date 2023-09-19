@@ -1,9 +1,6 @@
-package com.playjoy.domain;
+package com.playjoy.entity;
 
-import com.playjoy.config.converter.CategoryToStringConverter;
 import com.playjoy.config.converter.JsonConverter;
-import com.playjoy.config.converter.ListToStringConverter;
-import com.playjoy.config.converter.TagToStringConverter;
 import com.playjoy.enums.Category;
 import com.playjoy.enums.Tag;
 import lombok.Getter;
@@ -20,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PreUpdate;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
@@ -28,6 +26,7 @@ import java.util.List;
 @Getter
 @Setter
 @Accessors(chain = true)
+@Table(name = "product")
 public class ProductEntity {
 
     @Id

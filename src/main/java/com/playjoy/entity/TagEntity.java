@@ -1,4 +1,4 @@
-package com.playjoy.domain;
+package com.playjoy.entity;
 
 import com.playjoy.enums.Tag;
 import lombok.Getter;
@@ -13,11 +13,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
 @Getter
 @Setter
 @Accessors(chain = true)
+@Table(name = "tag")
 public class TagEntity {
 
     @Id

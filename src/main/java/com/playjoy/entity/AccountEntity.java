@@ -1,4 +1,4 @@
-package com.playjoy.domain;
+package com.playjoy.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,12 +13,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PreUpdate;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import java.time.Instant;
 
 @Entity
 @Getter
 @Setter
 @Accessors(chain = true)
+@Table(name = "account")
 public class AccountEntity {
 
     @Id
